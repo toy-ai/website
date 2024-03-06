@@ -59,7 +59,6 @@ export default function ToyMLPage() {
 
   return (
     <>
-    {/*<FlyoutNavbar/>*/}
     <FeatureSection featureTitle={featureTitle} featureItems={featureItems} rootPath={pathname}/>
     </>
   )
