@@ -11,10 +11,12 @@ import {
   IconProps,
 } from '@chakra-ui/react'
 import Image from "next/image";
+import ToyParkMember from "@/app/components/ToyParkMember";
 
 
 export default function LandingPage() {
   return (
+    <>
     <Container maxW={'5xl'}>
       <Stack
         textAlign={'center'}
@@ -36,7 +38,7 @@ export default function LandingPage() {
           {/* <div className="relative place-items-center">
             <Image
               className="relative"
-              src="/toypark.svg"
+              src="/toyai.png"
               alt="ToyPark"
               width={150}
               height={100}
@@ -63,5 +65,7 @@ export default function LandingPage() {
         {/*</Flex>*/}
       </Stack>
     </Container>
+    <ToyParkMember />
+    </>
   )
 }

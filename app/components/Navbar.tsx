@@ -41,7 +41,8 @@ export default function Navbar() {
         borderBottom={1}
         borderStyle={'solid'}
         borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}>
+        align={'center'}
+      >
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -53,42 +54,47 @@ export default function Navbar() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} >
           <Link href={'/'}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            Home
-          </Text>
+            <Button
+              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              fontFamily={'heading'}
+              color={useColorModeValue('gray.800', 'white')}
+              fontSize={{ base: 'sm', sm: 'sm', md: 'lg' }}
+              _hover={{
+                bg: useColorModeValue('gray.100', 'white'),
+              }}
+            >
+              Home
+            </Button>
           </Link>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
 
-        {/*<Stack*/}
-        {/*  flex={{ base: 1, md: 0 }}*/}
-        {/*  justify={'flex-end'}*/}
-        {/*  direction={'row'}*/}
-        {/*  spacing={6}>*/}
-        {/*  <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>*/}
-        {/*    Sign In*/}
-        {/*  </Button>*/}
-        {/*  <Button*/}
-        {/*    as={'a'}*/}
-        {/*    display={{ base: 'none', md: 'inline-flex' }}*/}
-        {/*    fontSize={'sm'}*/}
-        {/*    fontWeight={600}*/}
-        {/*    color={'white'}*/}
-        {/*    bg={'pink.400'}*/}
-        {/*    href={'#'}*/}
-        {/*    _hover={{*/}
-        {/*      bg: 'pink.300',*/}
-        {/*    }}>*/}
-        {/*    Sign Up*/}
-        {/*  </Button>*/}
-        {/*</Stack>*/}
+        <Stack
+          flex={{ base: 1, md: 0 }}
+          justify={'flex-end'}
+          direction={'row'}
+          spacing={6}>
+          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
+            Sign In
+          </Button>
+          <Button
+            as={'a'}
+            display={{ base: 'none', md: 'inline-flex' }}
+            fontSize={'sm'}
+            fontWeight={600}
+            color={'white'}
+            bg={'pink.400'}
+            href={'#'}
+            _hover={{
+              bg: 'pink.300',
+            }}>
+            Sign Up
+          </Button>
+        </Stack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -106,14 +112,14 @@ const DesktopNav = () => {
   return (
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box key={navItem.label} alignSelf={"center"}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
               <Box
                 as="a"
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'sm'}
+                fontSize={{ base: 'sm', sm: 'sm', md: 'lg' }}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{

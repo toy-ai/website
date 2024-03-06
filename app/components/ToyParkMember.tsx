@@ -28,7 +28,7 @@ const Card = ({ heading, description, icon, href, active }: CardProps) => {
   return (
     <Link href={href}>
       <Box
-        maxW={{ base: 'full', md: '275px' }}
+        maxW={{ base: 'full', md: '275px', lg: '500px' }}
         w={'full'}
         borderWidth="1px"
         borderRadius="lg"
