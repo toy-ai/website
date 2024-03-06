@@ -46,7 +46,7 @@ type FeatureItem = {
 export default function FeatureSection( { featureTitle, featureItems, rootPath }:
 { featureTitle: FeatureTitle, featureItems: FeatureItem[], rootPath: string }) {
   return (
-    <div className="bg-white py-24 sm:py-32 full-height">
+    <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h1 className="text-3xl font-semibold leading-7 text-gray-1000">{featureTitle.name}</h1>
