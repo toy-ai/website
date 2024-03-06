@@ -16,7 +16,7 @@ import { ReactNode } from 'react'
 
 const Logo = (props: any) => {
   return (
-    <Avatar name='Calvino' src='/logo.png' />
+    <Avatar size='lg' name='ToyAI' src='/toyai.png' />
   )
 }
 
@@ -28,7 +28,15 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
   )
 }
 
+function getCurrentYear(): number {
+ const currentDate = new Date();
+ return currentDate.getFullYear();
+}
+
+
 export default function LargeWithLogoCentered() {
+  const currentYear = getCurrentYear();
+
   return (
     <Box
     //   bg={useColorModeValue('gray.50', 'gray.900')}
@@ -40,28 +48,28 @@ export default function LargeWithLogoCentered() {
         >
           <Stack align={'flex-start'} >
             <ListHeader>Github</ListHeader>
-            <Box as="a" href={'https://github.com/llm-literature'}>
+            <Box as="a" href={'https://github.com/toy-ai'}>
               Organization
             </Box>
-              <Box as="a" href={'https://github.com/llm-literature/calvino'}>
-                Repository
+              <Box as="a" href={'https://github.com/toy-ai/website'}>
+                Website
               </Box>
             <Stack direction={'row'} align={'center'} spacing={-1}>
-              <Box as="a" href={'https://github.com/llm-literature/calvino/discussions'}>
-                Discussion
-              </Box>
-              <Tag
-                size={'sm'}
-                bg={useColorModeValue('green.300', 'green.800')}
-                ml={2}
-                color={'white'}>
-                New
-              </Tag>
+              {/*<Box as="a" href={'https://github.com/toy-ai/website/discussions'}>*/}
+              {/*  Discussion*/}
+              {/*</Box>*/}
+              {/*<Tag*/}
+              {/*  size={'sm'}*/}
+              {/*  bg={useColorModeValue('gray.300', 'gray.800')}*/}
+              {/*  ml={2}*/}
+              {/*  color={'white'}>*/}
+              {/*  Coming*/}
+              {/*</Tag>*/}
             </Stack>
 
-            <Box as="a" href={'https://github.com/llm-literature/calvino/releases'}>
-              Releases
-            </Box>
+            {/*<Box as="a" href={'https://github.com/llm-literature/calvino/releases'}>*/}
+            {/*  Releases*/}
+            {/*</Box>*/}
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Project</ListHeader>
@@ -81,9 +89,9 @@ export default function LargeWithLogoCentered() {
             <Box as="a" href={'https://datahonor.com/pysesd/'}>
               [Py]S-ESD
             </Box>
-            <Box as="a" href={'https://datahonor.com/python-package-template/'}>
-              MPPT
-            </Box>
+            {/*<Box as="a" href={'https://datahonor.com/python-package-template/'}>*/}
+            {/*  MPPT*/}
+            {/*</Box>*/}
             <Box as="a" href={'https://datahonor.com/toyml/'}>
               ToyML
             </Box>
@@ -108,10 +116,10 @@ export default function LargeWithLogoCentered() {
               </Box>
               <Tag
                   size={'sm'}
-                  bg={useColorModeValue('gray.300', 'gray.800')}
+                  bg={useColorModeValue('green.300', 'green.800')}
                   ml={2}
                   color={'white'}>
-                  Coming
+                  New
               </Tag>
             </Stack>
 
@@ -153,7 +161,7 @@ export default function LargeWithLogoCentered() {
           <Logo />
         </Flex>
         <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-          © 2023 Mathew Shen. All rights reserved
+          © 2023~{currentYear} Mathew Shen. All rights reserved
         </Text>
       </Box>
     </Box>
