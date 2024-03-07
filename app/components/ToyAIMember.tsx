@@ -61,7 +61,7 @@ const Card = ({ heading, description, icon, href, active }: CardProps) => {
   )
 }
 
-export default function ToyParkMember() {
+export default function ToyAIMember() {
   return (
     <Box p={1}>
       {/*<Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>*/}
