@@ -11,7 +11,7 @@ import {
   IconProps,
 } from '@chakra-ui/react'
 import Image from "next/image";
-import ToyParkMember from "@/app/components/ToyParkMember";
+import ToyAIMember from "@/app/components/ToyAIMember";
 
 
 export default function LandingPage() {
@@ -39,7 +39,7 @@ export default function LandingPage() {
             <Image
               className="relative"
               src="/toyai.png"
-              alt="ToyPark"
+              alt="ToyAI"
               width={150}
               height={100}
               priority
@@ -65,7 +65,7 @@ export default function LandingPage() {
         {/*</Flex>*/}
       </Stack>
     </Container>
-    <ToyParkMember />
+    <ToyAIMember />
     </>
   )
 }
