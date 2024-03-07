@@ -27,8 +27,8 @@ export default function LandingPage() {
           fontWeight={600}
           fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
           lineHeight={'110%'}>
-          Learning data science <br />
-          <Text as={'span'} color={'orange.400'}>
+          Learning <strong className="underline decoration-pink-300/[.99]">A</strong>rtificial <strong className="underline decoration-pink-300/[.99]">I</strong>ntelligence <br />
+          <Text as={'span'} color={'pink.300'}>
            from scratch
           </Text>
         </Heading>
