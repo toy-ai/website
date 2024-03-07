@@ -10,6 +10,7 @@ import {
   Text,
   IconButton,
   Button,
+  ButtonGroup,
   Stack,
   Collapse,
   Icon,
@@ -21,15 +22,35 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import {
+  EmailIcon,
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons'
+import { FaDiscord, FaGithub, FaTwitter, FaNewspaper } from "react-icons/fa";
+import FlyoutNavbar from './FlyoutNavbar';
+
 
 export default function Navbar() {
-  const { isOpen, onToggle } = useDisclosure()
-
+  const listDisplay = useBreakpointValue({ base: "none", lg: "flex" });
+  const navItems = [
+    {
+      label: "Twitter",
+      icon: <FaTwitter />,
+      link: "https://twitter.com/MathewShen42",
+    },
+    {
+      label: "Github",
+      icon: <FaGithub />,
+      link: "https://github.com/toy-ai",
+    },
+    {
+      label: "Email",
+      icon: <EmailIcon />,
+      link: "mailto:datahonor@gmail.com",
+    },
+  ];  
   return (
     <Box>
       <Flex
@@ -57,49 +78,82 @@ export default function Navbar() {
               Toy AI
             </Button>
           </Link>
+
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
+
         </Flex>
 
-        <Stack
-          flex={{ base: 5, md: 7 }}
-          justify={'flex-end'}
-          direction={'row'}
-          spacing={6}>
-          <Button
-            as={'a'}
-            size={'sm'}
-            fontSize={'sm'}
-            fontWeight={400}
-            color={'black'}
-            bg={'gray.100'}
-            href={'#'}
-            _hover={{
-              bg: 'gray.400',
-            }}
-            // variant={'link'}
-          >
-            Sign In
-          </Button>
-          <Button
-            as={'a'}
-            // display={{ base: 'none', md: 'inline-flex' }}
-            size={'sm'}
-            fontSize={'sm'}
-            fontWeight={400}
-            color={'black'}
-            bg={'gray.100'}
-            href={'#'}
-            _hover={{
-              bg: 'gray.400',
-            }}
-          >
-            Sign Up
-          </Button>
-        </Stack>
+        <Flex ml={10}>
+          <ButtonGroup variant="link" display={listDisplay}>
+              {navItems.map((item) => (
+                <IconButton
+                  key={item.label}
+                  as="a"
+                  href={item.link}
+                  target="_blank"
+                  icon={item.icon}
+                  variant="ghost"
+                  aria-label={item.label}
+                  px={2}
+                />
+              ))}
+          </ButtonGroup>
+        </Flex>
+        
+        {/* disable signin and signup */}
+        {/* <SignInUp /> */}
       </Flex>
     </Box>
+  )
+}
+
+interface NavItem {
+  label: string
+  subLabel?: string
+  children?: Array<NavItem>
+  href?: string
+}
+
+const SignInUp = () => {
+  return (
+    <Stack
+    flex={{ base: 5, md: 7 }}
+    justify={'flex-end'}
+    direction={'row'}
+    spacing={6}>
+    <Button
+      as={'a'}
+      size={'sm'}
+      fontSize={'sm'}
+      fontWeight={400}
+      color={'black'}
+      bg={'gray.100'}
+      href={'#'}
+      _hover={{
+        bg: 'gray.400',
+      }}
+      // variant={'link'}
+      >
+        Sign In
+      </Button>
+      <Button
+        as={'a'}
+        // display={{ base: 'none', md: 'inline-flex' }}
+        size={'sm'}
+        fontSize={'sm'}
+        fontWeight={400}
+        color={'black'}
+        bg={'gray.100'}
+        href={'#'}
+        _hover={{
+          bg: 'gray.400',
+        }}
+      >
+        Sign Up
+      </Button>
+    </Stack>
   )
 }
 
@@ -107,10 +161,40 @@ const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200')
   const linkHoverColor = useColorModeValue('gray.800', 'white')
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
-
+  const navItems: Array<NavItem> = [
+    {
+      label: 'Toys',
+      href: '#',
+      children: [
+        {
+          label: 'ToyML',
+          subLabel: 'Machine Learning Algorithms',
+          href: '/toyml',
+        },
+        {
+          label: 'ToyDL',
+          subLabel: 'Neural Networks in Deep Learning',
+          href: '/toydl',
+        },
+        {
+          label: 'ToyStat',
+          subLabel: 'Methods in Statistics',
+          href: '/toystat',
+        },
+      ],
+    },
+    {
+      label: "Blog",
+      href: "/blog"
+    },
+    {
+      label: "About",
+      href: "/about"
+    },
+  ]
   return (
     <Stack direction={'row'} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
+      {navItems.map((navItem) => (
         <Box key={navItem.label} alignSelf={"center"}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
@@ -188,52 +272,4 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 }
 
 
-interface NavItem {
-  label: string
-  subLabel?: string
-  children?: Array<NavItem>
-  href?: string
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Toys',
-    children: [
-      {
-        label: 'ToyML',
-        subLabel: 'Machine Learning Algorithms',
-        href: '/toyml',
-      },
-      {
-        label: 'ToyDL',
-        subLabel: 'Neural Networks in Deep Learning',
-        href: '/toydl',
-      },
-      {
-        label: 'ToyStat',
-        subLabel: 'Methods in Statistics',
-        href: '/toystat',
-      },
-    ],
-  },
-  {
-    label: 'Contact',
-    children: [
-      {
-        label: 'Github',
-        subLabel: 'https://github.com/shenxiangzhuang',
-        href: 'https://github.com/shenxiangzhuang',
-      },
-      {
-        label: 'Blog',
-        subLabel: 'datahonor.com',
-        href: 'datahonor.com',
-      }
-    ]
-  },
-  // {
-  //   label: 'Github',
-  //   href: '#',
-  // },
-]
 
