@@ -33,7 +33,8 @@ const Card = ({ heading, description, icon, href, active }: CardProps) => {
         borderWidth="1px"
         borderRadius="lg"
         overflow="hidden"
-        _hover={{ bg: active ? 'green.100' : 'red.100' }}
+        bg={active ? 'green.100' : 'gray.300' }
+        _hover={{ bg: active ? 'green.200' : 'red.100' }}
         p={5}>
         <Stack align={'center'} spacing={2}>
           <Flex
@@ -76,21 +77,21 @@ export default function ToyAIMember() {
       <Container maxW={'5xl'} mt={12}>
         <Flex flexWrap="wrap" gridGap={6} justify="center">
           <Card
-            heading={'ToyStat'}
+            heading={'(TODO)ToyStat'}
             icon={<Icon as={FcBearish} w={10} h={10} />}
             description={'Learning Statistics Method from scratch.'}
             href={'/toystat'}
             active={false}
           />
           <Card
-            heading={'ToyML'}
+            heading={'(WIP)ToyML'}
             icon={<Icon as={FcGenealogy} w={10} h={10} />}
             description={'Learning Machine learning from scratch.'}
             href={'/toyml'}
             active={true}
           />
           <Card
-            heading={'ToyDL'}
+            heading={'(Coming)ToyDL'}
             icon={<Icon as={FcMindMap} w={10} h={10} />}
             description={'Learning Deep learning from scratch.'}
             href={'/toydl'}
