@@ -16,7 +16,7 @@ import { ReactNode } from 'react'
 
 const Logo = (props: any) => {
   return (
-    <Avatar size='lg' name='ToyAI' src='/toyai.png' />
+    <Avatar size='lg' name='ToyAI' src='https://avatars.githubusercontent.com/u/154221423' />
   )
 }
 
