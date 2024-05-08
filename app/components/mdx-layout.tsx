@@ -30,15 +30,11 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
                     prose-ul:ml-72
                     prose-ul:mr-72
 
-                    prose-code:px-1
-                    prose-code:py-0.5
+                    prose-pre:ml-72
+                    prose-pre:mr-72
+
+                    {/*prose-code:text-pink-500*/}
                     prose-code:rounded-md
-                    prose-code:bg-gray-650 
-                    prose-code:p-1 
-                    prose-code:font-normal 
-                    prose-code:text-gray-400 
-                    prose-code:before:hidden 
-                    prose-code:after:hidden 
                     ">
       {children}
     </div>
