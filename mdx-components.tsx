@@ -8,7 +8,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     //   <h1 style={{ color: 'black', fontSize: '30px', textAlign: 'center'}}>{children}</h1>
     // ),
     // h2: ({ children }) => <h2 className="text-3xl font-bold text-center">{children}</h2>,
-
     ...components,
   }
 }

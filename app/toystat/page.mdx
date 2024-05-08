@@ -1,4 +1,6 @@
 import MdxLayout from '../components/mdx-layout'
+import KmeansPlaygroundDemo from "@/app/toyml/clustering/kmeans/playground";
+import KmeansPage from "@/app/toyml/clustering/kmeans/page";
 
 # Welcome to my MDX page!
 
@@ -20,7 +22,26 @@ This is a list in markdown:
 - Three
  
 Checkout my React component:
- 
+
+```python
+from toyml.clustering.kmeans_clustering import Kmeans
+
+
+def run():
+    k: int = 2
+    dataset = [[1.0, 2], [1, 4], [1, 0], [10, 2], [10, 4], [10, 0]]
+    
+    kmeans = Kmeans(dataset, k)
+    kmeans.fit()
+    kmeans.print_cluster()
+    test_input = [0.0, 0.0]
+    test_output = kmeans.predict(test_input)
+    print(f"input: {test_input} -> output: {test_output}")
+
+run()
+```
+
+<KmeansPage className="ml-72 mr-72"/>
 
 
 export default function MDXPage({ children }) {
