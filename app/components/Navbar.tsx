@@ -43,7 +43,7 @@ export default function Navbar() {
     {
       label: "Github",
       icon: <FaGithub />,
-      link: "https://github.com/toy-ai",
+      link: "https://github.com/ai-glimpse",
     },
     {
       label: "Email",
@@ -75,7 +75,7 @@ export default function Navbar() {
                 bg: useColorModeValue('gray.100', 'white'),
               }}
             >
-              Toy AI
+              AI Glimpse
             </Button>
           </Link>
 
