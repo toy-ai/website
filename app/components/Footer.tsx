@@ -48,10 +48,10 @@ export default function LargeWithLogoCentered() {
         >
           <Stack align={'flex-start'} >
             <ListHeader>Github</ListHeader>
-            <Box as="a" href={'https://github.com/toy-ai'}>
+            <Box as="a" href={'https://github.com/ai-glimpse'}>
               Organization
             </Box>
-              <Box as="a" href={'https://github.com/toy-ai/website'}>
+              <Box as="a" href={'https://github.com/ai-glimpse/website'}>
                 Website
               </Box>
             <Stack direction={'row'} align={'center'} spacing={-1}>
