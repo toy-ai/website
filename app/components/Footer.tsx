@@ -16,7 +16,7 @@ import { ReactNode } from 'react'
 
 const Logo = (props: any) => {
   return (
-    <Avatar size='lg' name='ToyAI' src='/toyai.png' />
+    <Avatar size='lg' name='ToyAI' src='https://avatars.githubusercontent.com/u/154221423' />
   )
 }
 
@@ -48,10 +48,10 @@ export default function LargeWithLogoCentered() {
         >
           <Stack align={'flex-start'} >
             <ListHeader>Github</ListHeader>
-            <Box as="a" href={'https://github.com/toy-ai'}>
+            <Box as="a" href={'https://github.com/ai-glimpse'}>
               Organization
             </Box>
-              <Box as="a" href={'https://github.com/toy-ai/website'}>
+              <Box as="a" href={'https://github.com/ai-glimpse/website'}>
                 Website
               </Box>
             <Stack direction={'row'} align={'center'} spacing={-1}>

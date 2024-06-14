@@ -10,8 +10,8 @@ import LargeWithLogoCentered from "@/app/components/Footer";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ToyAI',
-  description: 'Learning data science from scratch',
+  title: 'AI Glimpse',
+  description: 'Learning AI from scratch',
 }
 
 export default function RootLayout({
