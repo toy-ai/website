@@ -1,5 +1,4 @@
-import type { MDXComponents } from 'mdx/types'
-
+import type { MDXComponents } from "mdx/types";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -9,5 +8,5 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     // ),
     // h2: ({ children }) => <h2 className="text-3xl font-bold text-center">{children}</h2>,
     ...components,
-  }
+  };
 }
